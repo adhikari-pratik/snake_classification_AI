@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+<!-- write the code for the head within the head block  -->
+{% block head %}
+<title> Snake detection</title>
+{% endblock %}
+
+
+<!-- write the body code within the body block -->
+{% block body %}
+<div class="headings">
+    <h1>Snake Classification</h1>
+    <h3><span class="venom">Venomous</span> <span class="or">OR</span> <span class="nonvenom">Non Venomous</span></h3>
+</div>
+
+
+
+<form action="/predict" method="post" enctype="multipart/form-data">
+    <div class="file-upload-btn">
+        <label for="file-upload" class="custom-file-label" ><span class="plus"></span></label>
+        <input type="file" name="file" id="file-upload" class="initial-button" accept="image/*" onchange="loadFile(event)">
+    </div>
+
+    <div class="image-container">
+        <img id="uploaded-image" src="#" alt="uploaded-image" class="uploaded-image" >
+    </div>
+
+    <div class="predict-btn">
+        <label for="predict" class="predict-label"><strong>Predict</strong></label>
+        <input type="submit" name="submit" value="Predict" id="predict" class="initial-button">
+    </div>
+</form>
+
+
+
+
+{% endblock %}
